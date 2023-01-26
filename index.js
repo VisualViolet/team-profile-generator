@@ -65,7 +65,32 @@ const addEmployee = () => {
 }
 
 const addEngineer = () => {
-    console.log("Add engineer");
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "Great! Whats this engineer's name?",
+            name: "engineerName",
+        },
+        {
+            type: "input",
+            message: "Enter engineer ID:",
+            name: "engineerId",
+        },
+        {
+            type: "input",
+            message: "Enter engineer email:",
+            name: "engineerEmail",
+        },
+        {
+            type: "input",
+            message: "Enter engineer's GitHub username:",
+            name: "engineerGithub",
+        },
+    ])
+    .then((answers) => {
+        const newEngineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+        console.log(newEngineer)
+    })
 }
 
 const addIntern = () => {
