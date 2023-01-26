@@ -6,8 +6,13 @@ body {
     background-color: #e7e6f7;
 }
 
+.team-area {
+    flex-wrap: wrap;
+}
+
 .card {
     margin: 20px;
+    width: 300px;
     box-shadow: 10px 5px 5px #aea3b0;
     transition: transform 1s;
 }
