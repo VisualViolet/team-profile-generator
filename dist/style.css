@@ -7,6 +7,15 @@ body {
 }
 
 .card {
-    margin: 10px;
-    box-shadow: 10px 5px 5px red;
+    margin: 20px;
+    box-shadow: 10px 5px 5px #aea3b0;
+    transition: transform 1s;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card-header {
+    background-color: #e3d0d8;
 }
