@@ -94,7 +94,32 @@ const addEngineer = () => {
 }
 
 const addIntern = () => {
-    console.log("Add intern");
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "Great! Whats this interns name?",
+            name: "internName",
+        },
+        {
+            type: "input",
+            message: "Enter intern ID:",
+            name: "internId",
+        },
+        {
+            type: "input",
+            message: "Enter intern email:",
+            name: "internEmail",
+        },
+        {
+            type: "input",
+            message: "Enter interns school:",
+            name: "internSchool",
+        },
+    ])
+    .then((answers) => {
+        const newIntern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+        console.log(newIntern);
+    })
 }
 
 const assembleTeam = () => {
