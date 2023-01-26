@@ -5,3 +5,8 @@
 body {
     background-color: #e7e6f7;
 }
+
+.card {
+    margin: 10px;
+    box-shadow: 10px 5px 5px red;
+}

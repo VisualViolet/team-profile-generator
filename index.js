@@ -9,6 +9,10 @@ const Manager = require('./lib/Manager')
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
 
+// Array to store added employees
+const team = [];
+
+
 
 const startPrompt = () => {
     inquirer.prompt([
@@ -34,9 +38,9 @@ const startPrompt = () => {
         },
     ])
     .then((answers) => {
-        const newManager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOffice);
-        console.log("Success!")
-        console.log(newManager);
+        const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOffice);
+        team.push(manager);
+        console.log(manager);
         addEmployee()
     })
 }
@@ -89,7 +93,9 @@ const addEngineer = () => {
     ])
     .then((answers) => {
         const newEngineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+        team.push(newEngineer);
         console.log(newEngineer)
+        addEmployee();
     })
 }
 
@@ -118,12 +124,16 @@ const addIntern = () => {
     ])
     .then((answers) => {
         const newIntern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+        team.push(newIntern);
         console.log(newIntern);
+        addEmployee();
     })
 }
 
 const assembleTeam = () => {
-    console.log("Team assembled!")
+    fs.writeFile('./dist/team_page.html', generateHtml(team), (err) =>
+      err ? console.error(err) : console.log('Your team page has been generated!')
+    );
 }
 
 startPrompt()
