@@ -9,8 +9,8 @@ const Manager = require('./lib/Manager')
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern')
 
-startPrompt()
-function startPrompt() {
+
+const startPrompt = () => {
     inquirer.prompt([
         {
             type: "input",
@@ -37,5 +37,43 @@ function startPrompt() {
         const newManager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOffice);
         console.log("Success!")
         console.log(newManager);
+        addEmployee()
     })
 }
+
+const addEmployee = () => {
+    inquirer.prompt(
+        {
+            type: "list",
+            message: "Let's build your team! What type of employee would you like to add?",
+            choices: ["Engineer", "Intern", "I'm done assembling my team"],
+            name: "choice",
+        }
+    )
+    .then((answers) => {
+        switch(answers.choice) {
+            case "Engineer":
+                addEngineer();
+                break;
+            case "Intern":
+                addIntern();
+                break;
+            case "I'm done assembling my team":
+                assembleTeam();
+        }
+    })
+}
+
+const addEngineer = () => {
+    console.log("Add engineer");
+}
+
+const addIntern = () => {
+    console.log("Add intern");
+}
+
+const assembleTeam = () => {
+    console.log("Team assembled!")
+}
+
+startPrompt()
