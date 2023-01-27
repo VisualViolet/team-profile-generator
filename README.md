@@ -1,5 +1,11 @@
 # Team Profile Generator
 
+![Badge](https://img.shields.io/badge/License-MIT-pink)
+<img height=20 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+<img height=20 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
+<img height=20 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+<img height=20 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
+
 ## Description
 
 This Team Profile Generator is a Node.js command-line application that takes user input using the Inquirer package to generate a team profile HTML page. I built this application to reinforce ideas learned this week in the UW Coding Bootcamp, which included OOP concepts such as abstraction, encapsulation, inheritance, and polymorphism. Variables, methods, and classes were used to add functionality without compromising code comprehension. The page this app creates can be very useful for any collaborative team as it allows a user to see at a glance team composition and relevant contact information all in one place! Building this project helped me to learn the importance of object-oriented programming and provided a great segue into back-end development.
