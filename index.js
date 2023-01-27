@@ -12,8 +12,7 @@ const Intern = require('./lib/Intern')
 // Array to store added employees
 const team = [];
 
-
-
+// Function to start application and prompt for manager information
 const startPrompt = () => {
     inquirer.prompt([
         {
@@ -45,6 +44,7 @@ const startPrompt = () => {
     })
 }
 
+// Function to determine which function to run next depending on choice.
 const addEmployee = () => {
     inquirer.prompt(
         {
@@ -68,6 +68,7 @@ const addEmployee = () => {
     })
 }
 
+// Function to prompt engineer questions
 const addEngineer = () => {
     inquirer.prompt([
         {
@@ -99,6 +100,7 @@ const addEngineer = () => {
     })
 }
 
+// Function to prompt intern quotes
 const addIntern = () => {
     inquirer.prompt([
         {
@@ -130,6 +132,7 @@ const addIntern = () => {
     })
 }
 
+// Function to write team-page.html using generateHtml function with array of team members passed
 const assembleTeam = () => {
     fs.writeFile('./dist/team_page.html', generateHtml(team), (err) =>
       err ? console.error(err) : console.log('Your team page has been generated!')
